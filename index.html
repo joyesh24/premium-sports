@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Live Sports Streaming</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* General Styles */
         * {
@@ -17,11 +18,10 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #1a1a1a;
-            color: #fff;
+            background-color: #121212;
+            color: #ffffff;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
         }
 
         h1, h2, h3 {
@@ -35,21 +35,22 @@
 
         /* Header */
         header {
-            background-color: #000;
+            background-color: #1e1e1e;
             padding: 20px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
         header h1 {
-            color: #ff9900;
-            font-size: 2.5rem;
-            text-align: center;
+            color: #ff5722;
+            font-size: 2.8rem;
         }
 
         nav ul {
             display: flex;
             justify-content: center;
             list-style-type: none;
+            margin-top: 15px;
         }
 
         nav ul li {
@@ -57,26 +58,26 @@
         }
 
         nav ul li a {
-            color: #fff;
+            color: #ffffff;
             font-size: 1.2rem;
             text-transform: uppercase;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #ff9900;
+            color: #ff5722;
         }
 
         /* Live Games Section */
         .live-games {
-            padding: 30px 0;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .live-games h2 {
-            font-size: 2rem;
-            color: #ff9900;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: #ff5722;
+            margin-bottom: 30px;
         }
 
         .game-list {
@@ -87,16 +88,17 @@
         }
 
         .game-item {
-            background: #333;
+            background: #1e1e1e;
             border-radius: 10px;
             overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s ease;
+            width: 320px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .game-item:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
         }
 
         .game-image {
@@ -106,43 +108,47 @@
         }
 
         .game-info {
-            padding: 15px;
+            padding: 20px;
+            text-align: center;
         }
 
         .game-info h3 {
             font-size: 1.6rem;
-            color: #fff;
+            margin-bottom: 10px;
+            color: #ffffff;
         }
 
         .game-info p {
             font-size: 1rem;
-            color: #ccc;
-            margin: 10px 0;
+            color: #bbbbbb;
+            margin-bottom: 15px;
         }
 
         .watch-now {
-            padding: 10px 20px;
-            background-color: #ff9900;
+            padding: 12px 25px;
+            background-color: #ff5722;
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            color: #fff;
+            color: #ffffff;
             border-radius: 5px;
             transition: background 0.3s ease;
         }
 
         .watch-now:hover {
-            background-color: #e68a00;
+            background-color: #e64a19;
         }
 
         /* Video Streaming Section */
         .streaming {
-            padding: 50px 0;
+            display: none;
+            padding: 50px 20px;
             text-align: center;
             background-color: #222;
+            margin-top: 30px;
         }
 
-        video {
+        .streaming video {
             width: 80%;
             max-width: 1200px;
             margin: 20px auto;
@@ -152,15 +158,27 @@
 
         /* Footer */
         footer {
-            background-color: #000;
+            background-color: #1e1e1e;
             padding: 20px 0;
             text-align: center;
             margin-top: 50px;
         }
 
         footer p {
-            color: #fff;
+            color: #ffffff;
             font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff5722;
         }
 
         /* Mobile Responsiveness */
@@ -174,7 +192,7 @@
                 width: 90%;
             }
 
-            video {
+            .streaming video {
                 width: 95%;
             }
         }
@@ -184,22 +202,21 @@
 <body>
     <!-- Header Section -->
     <header>
-        <div class="container">
-            <h1>Live Sports Streaming</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#football">Football</a></li>
-                    <li><a href="#basketball">Basketball</a></li>
-                    <li><a href="#cricket">Cricket</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Live Sports Streaming</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#football">Football</a></li>
+                <li><a href="#basketball">Basketball</a></li>
+                <li><a href="#cricket">Cricket</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main Content -->
     <main>
+        <!-- Live Games Section -->
         <section id="home" class="live-games">
             <h2>Today's Live Matches</h2>
             <div class="game-list">
@@ -237,26 +254,12 @@
 
     <!-- Footer Section -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Live Sports Streaming. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Live Sports Streaming. All Rights Reserved.</p>
+        <a href="https://t.me/premiumfornothing" target="_blank" title="Join our Telegram Channel">
+            <i class="fab fa-telegram-plane"></i> Join Telegram
+        </a>
     </footer>
 
     <!-- JavaScript -->
     <script>
         // Function to start the live stream
-        function startStream(m3u8Link) {
-            var video = document.getElementById('live-video');
-            if (Hls.isSupported()) {
-                var hls = new Hls();
-                hls.loadSource(m3u8Link);
-                hls.attachMedia(video);
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = m3u8Link;
-            }
-            video.play();
-        }
-    </script>
-</body>
-
-</html>
